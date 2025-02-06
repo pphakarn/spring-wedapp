@@ -18,12 +18,13 @@ import lombok.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private int id;
     
     private String name;
     private String email;
     private String password;
+
     @CreatedDate
-    private LocalDateTime created_at;
+    @Column(updatable = false, nullable = false)
+    private LocalDateTime createdAt;
 }
